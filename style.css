@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Serif 4', serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-image: url("./assets/fonas2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(95, 145, 105);
+}
+
+header a {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 120px;
+}
+
+.logo span {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+    color: rgb(117, 96, 96);
+}
+
+header ul {
+    display: flex;
+    gap: 35px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: rgb(69, 58, 58);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.plants-wrapper {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.plant-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.border-wrapper {
+    align-self: center;
+    border-top: solid 2px rgb(117, 96, 96);
+    width: 60%;
+}
+.plants-wrapper :nth-child(4){
+    border-bottom: solid 2px rgb(117, 96, 96);
+}
+
+.plant-wrapper img {
+    min-height: 400px;
+    width: 30%;
+    object-fit: cover;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.text-wrapper .title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+
+
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-image: url("./assets/fonas2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(95, 145, 105);
+}
+
+.facebook {
+    fill: #497658;
+}
