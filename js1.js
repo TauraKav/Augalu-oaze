@@ -49,7 +49,7 @@ setId(plant.id);
       return res.json();
     })
     .then((data) => {
-data.sort((a, b) => Number(b.price) - Number(a.price)).forEach((plant) => {
+data.sort((a, b) => Number(a.price) - Number(b.price)).forEach((plant) => {
 
         plantsOptionsCreation(plant);
       });
