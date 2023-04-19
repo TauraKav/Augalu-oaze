@@ -42,13 +42,19 @@ const button = document.getElementById("delete");
       },
     })
 
-    .then(res => {
+    .then (res => {
         return res.json()
       }) 
-      .then((data) => {
-        const message = document.getElementById("one-plant-wrapper");
-        message.innerHTML = "Prekė pašalinta iš katalogo";
-        
+      .then((data) => { 
+        const deleteElement = document.getElementById ("one-plant-wrapper");
+        deleteElement.remove();
+        const removeDeleteButton = document.getElementById ("delete");
+        removeDeleteButton.remove();
+const messageElement = document.createElement ("div");
+messageElement.setAttribute ("class","delete-message");
+messageElement.textContent= "Prekė pašalinta iš katalogo";
+let section = document.querySelector('#plant-section');
+section.prepend(messageElement);
     });
 }
     
