@@ -13,11 +13,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 150px;
+    height: 120px;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
-
+    margin-bottom: 30px;
     background-image: url("./assets/fonas2.jpg");
     background-size: cover;
     background-position: center;
@@ -34,7 +34,7 @@ header a {
 }
 
 .logo img {
-    height: 120px;
+    height: 100px;
 }
 
 .logo span {
@@ -58,15 +58,15 @@ header ul li a {
 }
 
 .plants-wrapper {
-    min-height: calc(100vh - 300px);
+    min-height: calc(100vh - 240px);
     display: flex;
     flex-direction: column;
 }
 
-
 .plant-wrapper {
     display: flex;
-    gap: 20px;
+    gap:
+        30px;
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -84,8 +84,8 @@ header ul li a {
 }
 
 .plant-wrapper img {
-    min-height: 200px;
-    width: 30%;
+    min-height: 170px;
+    width: 170px;
     object-fit: cover;
 }
 
@@ -93,7 +93,7 @@ header ul li a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 10%;
+    width: 20%;
 }
 
 .text-wrapper .title {
@@ -201,6 +201,13 @@ header ul li a {
     letter-spacing: 0.3px;
 }
 
+
+.form-wrapper {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+}
+
 .plant-form {
     display: flex;
     flex-direction: column;
@@ -235,13 +242,40 @@ header ul li a {
     letter-spacing: 0.3px;
     width: 150px;
     align-self: flex-end;
-    margin-right: 40px;
     margin-top: 10px;
+}
+
+.form-wrapper button {
+    padding: 8px;
+    background-color: #d5edd2;
+    color: rgb(69, 58, 58);
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 2px rgb(69, 58, 58);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    width: 150px;
+    margin-top: 10px;
+    align-self: center;
+    margin-bottom: 10px;
 }
 
 .success-message {
     color: rgb(102, 177, 102);
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
 }
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 .delete-message {
     color: red;
@@ -254,10 +288,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 150px;
+    height: 120px;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 30px;
 
     background-image: url("./assets/fonas2.jpg");
     background-size: cover;
@@ -277,4 +312,121 @@ footer {
 
 .icons-wrapper a {
     align-self: center;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+
+@media (max-width: 810px) {
+    header ul {
+        display: none;
+    }
+
+    .hamburger-menu {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu .hamburger-line {
+        height: 4px;
+        background: rgb(69, 58, 58);
+        border-radius: 20px;
+    }
+
+    .logo img {
+        height: 90px;
+    }
+
+    .logo span {
+        font-family: 'Bungee Inline', cursive;
+        font-size: 25px;
+    }
+
+    .one-plant-wrapper {
+        width: 400px;
+    }
+
+    .plant-photo {
+        height: 300px;
+        background-repeat: no-repeat;
+        width: 200px;
+        background-size: cover;
+        align-self: center;
+    }
+
+    .plant-name,  
+    .plant-price  {
+        font-size: 25px;
+    }
+    
+    .plant-place {
+        font-size: 16px;
+    }
+    
+    
+    .plant-description {
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    .twitter,
+    .facebook {
+        width:40px;
+    }
+
+    .instagram {
+        width: 34px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .logo img {
+        height: 60px;
+    }
+
+    .logo span {
+        font-family: 'Bungee Inline', cursive;
+        font-size: 18px;
+    }
+
+    .plant-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px
+    }
+
+    .plant-wrapper img {
+        min-height: 130px;
+        width: 130px;
+    }
+
+    .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .one-plant-wrapper {
+        width: 300px;
+    } 
+
+   .form-wrapper button {
+width:90px;
+    }
+
+    .twitter,
+    .facebook {
+        width:30px;
+    }
+
+    .instagram {
+        width: 26px;
+    }
 }

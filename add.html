@@ -27,9 +27,15 @@
             <li><a href="./index.html">Augalai</a></li>
             <li><a href="./add.html">Pridėti augalą</a></li>
         </ul>
+
+        <div class="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+          </div>
     </header>
 
-    <div class="plants-wrapper" id="plants-wrapper">
+    <div class="form-wrapper" id="form-wrapper">
         <div class="plant-form" id="plant-form">
             <label for="name">Pavadinimas:</label>
             <input type="text" id="name" placeholder="Įrašykite prekės pavadinimą">
@@ -47,10 +53,11 @@
             <input id="img_url" placeholder="Įrašykite prekės URL adresą" />
 
             <button class="submit-button" id="submit-button">Pridėti</button>
-            <div id="success-message" class="success-message"></div>
 
-            <button class="back" id="back">Grįžti</button>
         </div>
+        <button class="back" id="back">Grįžti</button>
+        <div id="success-message" class="success-message"></div>
+            <div id="error-message" class="error-message"></div>
     </div>
 
     <footer>

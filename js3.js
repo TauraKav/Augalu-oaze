@@ -14,23 +14,27 @@ const fetchPlants = (newPlant) => {
         })
         .then((data) => {
             let allInputs = document.querySelectorAll('input');
-            allInputs.forEach(singleInput => singleInput.value = '');
-
-            const successMessage = document.getElementById("success-message");
-            successMessage.innerHTML = "Prekė sėkmingai pridėta";
+        allInputs.forEach(singleInput => singleInput.value = '');
 
         });
 };
 
 function createNewPlant() {
     button.addEventListener("click", () => {
+   
         const name = document.getElementById("name").value;
         const price = document.getElementById("price").value;
         const description = document.getElementById("description").value;
         const place = document.getElementById("place").value;
         const img_url = document.getElementById("img_url").value;
 
-        const newPlant = {
+        if (name && price && description && place && img_url) {
+            const deleteErrorMessage = document.getElementById ("error-message");
+            deleteErrorMessage.remove();
+            const successMessage = document.getElementById("success-message");
+           successMessage.innerHTML = "Prekė sėkmingai pridėta";
+
+           const newPlant = {
             name: name,
             price: price,
             description: description,
@@ -40,14 +44,23 @@ function createNewPlant() {
 
         fetchPlants(newPlant);
 
+        const backButton = document.getElementById("back");
+        backButton.addEventListener("click", () => {
+            window.location.replace("./index.html");})
+
+              } else {
+            const deleteElement = document.getElementById ("plant-form");
+        deleteElement.remove();
+        const deleteSuccessMessage = document.getElementById ("success-message");
+        deleteSuccessMessage.remove();
+        const errorMessage = document.getElementById("error-message");
+          errorMessage.textContent= "Prašome įvesti reikiamus duomenis";
+
+          {const backButton = document.getElementById("back");
+          backButton.addEventListener("click", () => {
+              window.location.replace("./add.html");})}}
     });
 }
-createNewPlant();
 
+ createNewPlant()
 
-
-
-const backButton = document.getElementById("back");
-backButton.addEventListener("click", () => {
-    window.location.replace("./index.html");
-})
