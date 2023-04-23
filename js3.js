@@ -18,6 +18,7 @@ const fetchPlants = (newPlant) => {
 
         });
 };
+   
 
 function createNewPlant() {
     button.addEventListener("click", () => {
@@ -27,12 +28,13 @@ function createNewPlant() {
         const description = document.getElementById("description").value;
         const place = document.getElementById("place").value;
         const img_url = document.getElementById("img_url").value;
+        const errorMessage = document.getElementById ("error-message");
+        const successMessage = document.getElementById("success-message");
+        const removePlantForm = document.getElementById ("plant-form");
 
         if (name && price && description && place && img_url) {
-            const deleteErrorMessage = document.getElementById ("error-message");
-            deleteErrorMessage.remove();
-            const successMessage = document.getElementById("success-message");
            successMessage.innerHTML = "Prekė sėkmingai pridėta";
+           errorMessage.innerHTML= "";
 
            const newPlant = {
             name: name,
@@ -44,17 +46,10 @@ function createNewPlant() {
 
         fetchPlants(newPlant);
 
-        const backButton = document.getElementById("back");
-        backButton.addEventListener("click", () => {
-            window.location.replace("./index.html");})
-
               } else {
-            const deleteElement = document.getElementById ("plant-form");
-        deleteElement.remove();
-        const deleteSuccessMessage = document.getElementById ("success-message");
-        deleteSuccessMessage.remove();
-        const errorMessage = document.getElementById("error-message");
-          errorMessage.textContent= "Prašome įvesti reikiamus duomenis";
+                removePlantForm.remove();
+          errorMessage.innerHTML= "Prašome įvesti reikiamus duomenis";
+          successMessage.innerHTML = "";
 
           {const backButton = document.getElementById("back");
           backButton.addEventListener("click", () => {
@@ -64,3 +59,21 @@ function createNewPlant() {
 
  createNewPlant()
 
+ 
+ const backButton = document.getElementById("back");
+ backButton.addEventListener("click", () => {
+     window.location.replace("./index.html");})
+
+
+const hamburger = document.getElementById ("hamburger-menu");
+const navMenu = document.getElementById ("nav-menu");
+
+hamburger.addEventListener ("click", () => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}))

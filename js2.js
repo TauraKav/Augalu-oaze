@@ -19,7 +19,6 @@ description.innerHTML = data.description;
 
 };
 
-
 fetch("https://643d8759f0ec48ce905e9986.mockapi.io/plant/plants/" + itemId)
 
   .then((res) => {
@@ -28,7 +27,6 @@ fetch("https://643d8759f0ec48ce905e9986.mockapi.io/plant/plants/" + itemId)
   .then((data) => {
     addElementsToScreen (data);
   });
-
 
 
 const button = document.getElementById("delete");
@@ -67,3 +65,18 @@ const backButton  = document.getElementById ("back");
 backButton.addEventListener ("click", () => {
     window.location.replace ("./index.html");
 })
+
+
+
+const hamburger = document.getElementById ("hamburger-menu");
+const navMenu = document.getElementById ("nav-menu");
+
+hamburger.addEventListener ("click", () => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}))

@@ -16,25 +16,28 @@
 
 <body>
     <header>
+        <nav class="navbar"> 
         <a href="./index.html">
             <div class="logo">
                 <span>Augalų oazė</span>
                 <img src="./assets/logo.png" alt="plant">
             </div>
         </a>
-        <ul>
-            <li><a href="#">Apie mus</a></li>
-            <li><a href="./index.html">Augalai</a></li>
-            <li><a href="./add.html">Pridėti augalą</a></li>
+        
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="#">Apie mus</a></li>
+            <li class="nav-item"><a class="nav-link" href="./index.html">Augalai</a></li>
+            <li class="nav-item"><a class="nav-link" href="./add.html">Pridėti augalą</a></li>
         </ul>
-
-        <div class="hamburger-menu">
+   
+        <div class="hamburger-menu" id="hamburger-menu">
             <div class="hamburger-line"></div>
             <div class="hamburger-line"></div>
             <div class="hamburger-line"></div>
           </div>
+        </nav>
     </header>
-
+    
     <div class="form-wrapper" id="form-wrapper">
         <div class="plant-form" id="plant-form">
             <label for="name">Pavadinimas:</label>

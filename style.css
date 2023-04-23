@@ -10,9 +10,6 @@ body {
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     height: 120px;
     width: 100%;
     padding-left: 30px;
@@ -24,7 +21,13 @@ header {
     background-color: rgb(95, 145, 105);
 }
 
-header a {
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+header nav a {
     text-decoration: none;
 }
 
@@ -43,14 +46,14 @@ header a {
     color: rgb(117, 96, 96);
 }
 
-header ul {
-    display: flex;
+.nav-menu {
+     display: flex;
     gap: 35px;
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 0; 
 }
 
-header ul li a {
+.nav-link {
     text-decoration: none;
     color: rgb(69, 58, 58);
     font-weight: 500;
@@ -201,7 +204,6 @@ header ul li a {
     letter-spacing: 0.3px;
 }
 
-
 .form-wrapper {
     min-height: calc(100vh - 300px);
     display: flex;
@@ -316,20 +318,20 @@ footer {
 
 .hamburger-menu {
     display: none;
+    cursor: pointer;
 }
 
 
 @media (max-width: 810px) {
-    header ul {
-        display: none;
-    }
-
+   
     .hamburger-menu {
+        display:block;
         width: 40px;
         height: 40px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        cursor: pointer;
     }
 
     .hamburger-menu .hamburger-line {
@@ -338,6 +340,35 @@ footer {
         border-radius: 20px;
     }
 
+    .hamburger-menu.active .hamburger-line:nth-child(2){
+        opacity: 0;
+      }
+     .hamburger-menu.active .hamburger-line:nth-child(1){
+        transform: translateY(18px) rotate(45deg);
+      }
+     .hamburger-menu.active .hamburger-line:nth-child(3){
+        transform: translateY(-18px) rotate(-45deg);
+      }
+      .nav-menu{
+        position: fixed;
+      right: 100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(220, 205, 205);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .nav-item{
+        margin: 16px 0;
+      }
+
+      .nav-menu.active{
+       left: 0;
+      }
+    
     .logo img {
         height: 90px;
     }
