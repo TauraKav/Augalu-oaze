@@ -118,6 +118,7 @@ header nav a {
     background-repeat: no-repeat;
     width: 400px;
     background-size: cover;
+    background-position: center;
     align-self: center;
 }
 
