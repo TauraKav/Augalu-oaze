@@ -460,4 +460,12 @@ width:90px;
     .instagram {
         width: 26px;
     }
+
+    header, footer {
+        height: 80px;
+    }
+    
+    .hamburger-menu .hamburger-line {
+        height: 3px;
+    }
 }
